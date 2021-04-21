@@ -1,15 +1,15 @@
 import { Request, Response } from 'express';
 
-import SettingsService from '../services/SettingsService';
+import UsersService from '../services/UsersService';
 
-class SettingsController {
+class UsersController {
   async create(req: Request, res: Response): Promise<Response> {
-    const { chat, username } = req.body;
+    const { email } = req.body;
 
-    const settingsService = new SettingsService();
+    const settingsService = new UsersService();
 
     try {
-      const settings = await settingsService.create({ chat, username });
+      const settings = await settingsService.create(email);
 
       return res.status(201).json(settings);
     } catch (error) {
@@ -21,4 +21,4 @@ class SettingsController {
   }
 }
 
-export default new SettingsController();
+export default new UsersController();
