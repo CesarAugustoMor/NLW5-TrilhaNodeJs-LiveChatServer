@@ -29,4 +29,12 @@ export default class SettingsService {
 
     return settings;
   }
+
+  async findByUsername(username: string) {
+    return await this.settingsRepository.findOne({ username });
+  }
+
+  async updateChat(username: string, chat: boolean) {
+    return await this.settingsRepository.update({ username }, { chat });
+  }
 }

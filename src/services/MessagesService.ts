@@ -8,7 +8,7 @@ interface MessageCreate {
   user_id: string;
 }
 
-export default class UserService {
+export default class MessageService {
   private messagesRepository: MessagesRepository;
 
   constructor() {

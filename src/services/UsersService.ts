@@ -7,6 +7,7 @@ export default class UserService {
   constructor() {
     this.usersRepository = getCustomRepository(UsersRepository);
   }
+
   async create(email: string) {
     const userExists = await this.usersRepository.findOne({ email });
 

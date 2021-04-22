@@ -6,6 +6,8 @@ import MessagesController from './controllers/MessagesController';
 const routes = Router();
 
 routes.post('/settings', SettingsController.create);
+routes.get('/settings/:username', SettingsController.findByUsername);
+routes.put('/settings/:username', SettingsController.updateChat);
 
 routes.post('/users', UsersController.create);
 
