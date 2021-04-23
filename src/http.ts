@@ -17,6 +17,7 @@ app.engine('html', renderFile);
 app.set('view engine', 'html');
 
 app.get('/', (req, res) => res.render('html/client.html'));
+app.get('/admin', (req, res) => res.render('html/admin.html'));
 
 const http = createServer(app); // criação protocolo http
 const io = new Server(http); // criação protocolo WebSocket
